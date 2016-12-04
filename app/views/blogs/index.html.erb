@@ -6,37 +6,34 @@
   <!-- <caption>blog notes</caption> -->
   <thead>
     <tr>
-      <th class="col-md-5">Title</th>
-      <!-- <th class="col-md-3">Pathw</th> -->
-      <!-- <th class="col-md-3">Pathl</th> -->
-      <th class="col-md-1">Category</th>
-      <th class="col-md-5">Secnario</th>
-      <!-- <th class="col-md-3">Note</th> -->
-      <th class="col-md-1">Level</th>
-      <!-- <th class="col-md-3">Tested</th> -->
-      <!-- <th class="col-md-3">Referto</th> -->
+      <th class="col-xs-5">Title</th>
+      <th class="col-md-1 hidden-xs">Category</th>
+      <th class="col-md-4 hidden-xs">Secnario</th>
+      <th class="col-md-1 hidden-xs">Level</th>
+      <th class="col-xs-1">Mod</th>
     </tr>
   </thead>
 
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= blog.title %></td>
-        <!-- <td><%= blog.pathw %></td> -->
-        <!-- <td><%= blog.pathl %></td> -->
-        <td><%= blog.category %></td>
-        <td><%= blog.secnario %></td>
-        <!-- <td><%= blog.note %></td> -->
-        <td><%= blog.level %></td>
-        <!-- <td><%= blog.tested %></td> -->
-        <!-- <td><%= blog.referto %></td> -->
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="col-xs-5"><%= blog.title %></td>
+        <td class="col-md-1 hidden-xs"><%= blog.category %></td>
+        <td class="col-md-4 hidden-xs"><%= blog.secnario %></td>
+        <td class="col-md-1 hidden-xs"><%= blog.level %></td>
+        <td class="col-xs-1">
+        <%= link_to '', blog, :class=>'glyphicon glyphicon-envelope' %>
+        <%= link_to '', edit_blog_path(blog), class: 'glyphicon glyphicon-edit' %>
+        <%= link_to '', blog, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'glyphicon' %>  <!-- glyphicon-remove -->
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
+
+<div class="container">
+  <%= link_to 'New Blog', new_blog_path, class: "btn btn-default btn-sm glyphicon glyphicon-plus-sign" %>
 </div>
 
     <div class="container text-center">
@@ -50,7 +47,3 @@
          <li class=""><a href="">&raquo;</a></li>
        </ul>
     </div>
-
-<div class="container">
-  <%= link_to 'New Blog', new_blog_path, class: "btn btn-default glyphicon glyphicon-plus-sign" %>
-</div>
