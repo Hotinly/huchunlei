@@ -1,9 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Blogs</h1>
+
 <div class="container">
+  <div class="col-xs-12">
+    <div class="input-group">
+      <input class="form-control" type="text" placeholder="Search">
+      <span class="input-group-btn">
+        <button class="btn btn-info" type="button">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
 <table class="table table-striped">
-  <!-- <caption>blog notes</caption> -->
   <thead>
     <tr>
       <th class="col-xs-5">Title</th>
@@ -30,20 +41,20 @@
     <% end %>
   </tbody>
 </table>
-</div>
 
 <div class="container">
   <%= link_to 'New Blog', new_blog_path, class: "btn btn-default btn-sm glyphicon glyphicon-plus-sign" %>
 </div>
 
-    <div class="container text-center">
-       <ul class="pagination">
-         <li class="disabled"><a href="">&laquo;</a></li>
-         <li class="active"><a href="">1</a></li>
-         <li class=""><a href="">2</a></li>
-         <li class=""><a href="">3</a></li>
-         <li class=""><a href="">4</a></li>
-         <li class=""><a href="">5</a></li>
-         <li class=""><a href="">&raquo;</a></li>
-       </ul>
-    </div>
+<!-- <div class="container text-center">
+   <ul class="pagination">
+     <li class="disabled"><a href="">&laquo;</a></li>
+     <li class="active"><a href="">1</a></li>
+     <li class=""><a href="">2</a></li>
+     <li class=""><a href="">3</a></li>
+     <li class=""><a href="">4</a></li>
+     <li class=""><a href="">5</a></li>
+     <li class=""><a href="">&raquo;</a></li>
+   </ul>
+</div> -->
+
